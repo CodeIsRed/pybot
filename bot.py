@@ -8,7 +8,8 @@ client = discord.Client()
 async def on_message(message):
     if message.content.startswith('!hi'):
         ch = message.channel
-        msg = 'Hello {0.author.mention}'.format(message)
+        user = message.user
+        msg = 'Hello {0.author.mention} {}'.format(message,user.id)
         await ch.send(msg)
 @client.event
 async def on_ready():

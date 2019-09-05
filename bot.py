@@ -3,7 +3,6 @@ import asyncio
 
 
 client = discord.Client()
-client = commands.Bot(command_prefix = '?')
 
 @client.event
 async def on_message(message):

@@ -18,10 +18,7 @@ async def on_message(message):
 async def on_ready():
     game = discord.Activity(name="Beta MrEinstien Network", type=discord.ActivityType.listening)
     await client.change_presence(status=discord.Status.dnd, activity=game)
-    print('Login as ')
-    print(client.user.name)
-    print(client.user.id)
-    print('-----')
+    
 
 
 client.run(os.getenv('token'))

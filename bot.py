@@ -3,7 +3,7 @@ import asyncio
 
 
 client = discord.Client()
-
+TOKEN = os.environ['token']
 
 @client.event
 async def on_message(message):
@@ -21,6 +21,6 @@ async def on_ready():
     print('-----')
 
 
-client.run("")
+client.run(TOKEN)
 
         

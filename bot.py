@@ -7,6 +7,8 @@ client = discord.Client()
 
 @client.event
 async def on_message(message):
+    game = discord.Activity(name="Beta MrEinstien Network", type=discord.ActivityType.listening)
+    await client.change_presence(status=discord.Status.dnd, activity=game)
     if message.author == client.user:
         return
     if message.content.startswith('!hi'):

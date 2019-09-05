@@ -7,8 +7,9 @@ client = discord.Client()
 @client.event
 async def on_message(message):
     if message.content.startswith('!hi'):
+        ch = message.channel
         msg = 'Hello {0.author.mention}'.format(message)
-        await client.send_message(message.channel, msg)
+        await ch.send(msg)
 @client.event
 async def on_ready():
     game = discord.Activity(name="Beta MrEinstien Network", type=discord.ActivityType.listening)

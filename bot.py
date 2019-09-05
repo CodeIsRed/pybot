@@ -3,16 +3,11 @@ import asyncio
 
 
 client = discord.Client()
+client = commands.Bot(command_prefix = '?')
 
-
-@client.event
-async def on_message(message):
-    
-    if message.author == client.user:
-        return
-    if message.content.startswith('?hi'):
-        msg = 'Hello {0.author.mention}'.format(message)
-        await client.send_message(message.channel, msg)
+@client.command()
+async def hey(ctx):
+    await client.send('hi')
         
 @client.event
 async def on_ready():
@@ -22,4 +17,3 @@ async def on_ready():
 
 
 client.run(os.getenv('token'))
-        

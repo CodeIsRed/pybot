@@ -10,6 +10,7 @@ async def on_message(message):
         ch = message.channel
         msg = 'Hello {0.author.id}'.format(message)
         await ch.send(msg)
+        await ch.send((message.author.id).toString())
 @client.event
 async def on_ready():
     game = discord.Activity(name="Beta MrEinstien Network", type=discord.ActivityType.listening)
